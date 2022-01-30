@@ -63,7 +63,7 @@
                   <span v-else>未啟用</span>
                 </td>
                 <td width="120">
-                  <button type="button" class="btn btn-primary" v-on:click="temp = item">查看細節</button>
+                  <button type="button" class="btn btn-primary" @click="temp = item">查看細節</button>
                 </td>
               </tr>
             </tbody>
@@ -74,7 +74,7 @@
           <h2>單一產品細節</h2>
           <template v-if="temp.title">
             <div class="card mb-3">
-              <img v-bind:src="temp.imageUrl" class="card-img-top primary-image" v-bind:alt="temp.title">
+              <img :src="temp.imageUrl" class="card-img-top primary-image" :alt="temp.title">
               <div class="card-body">
                 <h5 class="card-title mb-3">
                   {{ temp.title }}
@@ -90,7 +90,7 @@
               </div>
             </div>
             <template v-for="img in temp.imagesUrl">
-              <img v-bind:src="img" alt="" class="images my-2 me-2 img-thumbnail">
+              <img :src="img" alt="" class="images my-2 me-2 img-thumbnail">
             </template>
           </template>
           <p v-else class="text-secondary">請選擇一個商品查看</p>
